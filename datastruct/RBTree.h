@@ -1,5 +1,4 @@
 #pragma once
-
 #include<iostream>
 using namespace std;
 
@@ -272,7 +271,7 @@ bool RBTree<K,V>:: IsRBTree()
 	Node* cur=_root;
 	while (cur)
 	{
-		if(cur->_col=BLACK)
+		if(cur->_col==BLACK)
 		{
 			++BalckCount;
 		}
@@ -284,7 +283,7 @@ bool RBTree<K,V>:: IsRBTree()
 template<class K,class V>
 bool RBTree<K,V>:: _IsRBTree(Node* root,const int BalckCount,int k)
 {
-	if (root==NULL)   //递归结束条件
+	if (root==NULL)   
 		return true;
 	//连续两个红节点则不是红黑树
 	if (root->_col==RED && root->_parent->_col==RED)
